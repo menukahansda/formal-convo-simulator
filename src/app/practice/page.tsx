@@ -28,8 +28,8 @@ export default function Practice() {
   }
   return (
     <>
-      <div className="relative">
-        <form onSubmit={handleFormSubmit}>
+      <div className="min-h-screen flex flex-col items-center pt-10">
+        <form onSubmit={handleFormSubmit} className="w-full flex justify-center">
           <input
             placeholder="Enter a scenario topic..."
             type="text"
@@ -37,6 +37,7 @@ export default function Practice() {
             id="scenario-topic"
             value={searchTopic}
             onChange={(e) => setSearchTopic(e.target.value)}
+            className="w-full max-w-md px-4 py-2 border rounded-md"
           />
         </form>
         <div className="mt-6 flex flex-col gap-4 items-center">

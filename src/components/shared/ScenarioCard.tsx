@@ -7,9 +7,14 @@ type ScenarioProps = {
   scenario: string;
 };
 export default function ScenarioCard({ topic, scenario }: ScenarioProps) {
+    function handleClick(){
+        console.log("Open Scenario : ", topic);
+    }
   return (
     <>
-      <div className="group rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-lg transition-all hover:border-stone-600/40 hover:bg-neutral-800">
+      <div 
+      onClick={handleClick}
+      className="group cursor-pointer rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-lg transition-all hover:border-stone-600/40 hover:bg-neutral-800">
         <div className="mb-2 flex items-start justify-between gap-3">
           <h3 className="text-xl font-semibold text-neutral-100">
             {topic}

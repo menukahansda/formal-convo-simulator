@@ -3,12 +3,9 @@
 import Chip from "../ui/Chip";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import type { LLMResponse } from "@/types/llm";
 
-type ScenarioProps = {
-  topic: string;
-  scenario: string;
-};
-export default function ScenarioCard({ topic, scenario }: ScenarioProps) {
+export default function ScenarioCard({ topic, scenario, difficulty, person, tone }: LLMResponse) {
 
     const router = useRouter();
     function handleClick(){
@@ -31,9 +28,9 @@ export default function ScenarioCard({ topic, scenario }: ScenarioProps) {
           />
         </div>
         <div className="mb-3 flex flex-wrap gap-2">
-          <Chip label="Easy" color="emerald" />
-          <Chip label="Manager" color="blue" />
-          <Chip label="Formal" color="slate" />
+          <Chip label={difficulty} color="emerald" />
+          <Chip label={person} color="blue" />
+          <Chip label={tone} color="slate" />
         </div>
 
         <p className="text-sm leading-relaxed text-neutral-400">{scenario}</p>

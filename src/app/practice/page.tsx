@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
-
 export default function Practice() {
-  const [topic, setTopic] = useState("");
+  const [searchTopic, setSearchTopic] = useState("");
   async function handleFormSubmit(e: React.SubmitEvent) {
     e.preventDefault();
-    console.log(`form submitted with topic = ${topic}`);
+    console.log(`form submitted with topic = ${searchTopic}`);
   }
   return (
     <>
@@ -16,8 +15,8 @@ export default function Practice() {
             type="text"
             name="scenario-topic"
             id="scenario-topic"
-            value={topic}
-            onChange={(e) => setTopic(e.target.value)}
+            value={searchTopic}
+            onChange={(e) => setSearchTopic(e.target.value)}
           />
         </form>
         

@@ -1,14 +1,20 @@
 // after search , this card is to be used for different scenario based on topics
+"use client"
 import Chip from "../ui/Chip";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type ScenarioProps = {
   topic: string;
   scenario: string;
 };
 export default function ScenarioCard({ topic, scenario }: ScenarioProps) {
+
+    const router = useRouter();
     function handleClick(){
         console.log("Open Scenario : ", topic);
+        const id = topic.toLowerCase().trim().replace(/\s+/g, "-");
+        router.push(`/practice/scenario/${id}`);
     }
   return (
     <>

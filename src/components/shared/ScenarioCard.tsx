@@ -9,14 +9,14 @@ type ScenarioProps = {
 export default function ScenarioCard({ topic, scenario }: ScenarioProps) {
   return (
     <>
-      <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-lg transition-all hover:border-stone-600/40 hover:bg-neutral-800">
+      <div className="group rounded-2xl border border-neutral-800 bg-neutral-900 p-5 shadow-lg transition-all hover:border-stone-600/40 hover:bg-neutral-800">
         <div className="mb-2 flex items-start justify-between gap-3">
-          <h3 className="mb-2 text-xl font-semibold text-neutral-100">
+          <h3 className="text-xl font-semibold text-neutral-100">
             {topic}
           </h3>
           <ArrowRight
             size={25}
-            className="text-neutral-500 transition-all hover:translate-x-1 hover:text-stone-300"
+            className="text-neutral-500 transition-all duration-200 group-hover:translate-x-1 group-hover:text-stone-300"
           />
         </div>
         <div className="mb-3 flex flex-wrap gap-2">
